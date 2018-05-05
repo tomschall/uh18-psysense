@@ -1,0 +1,16 @@
+{
+  "wlan": {
+    "ssid": "SSID",
+    "auth": "password"
+  },
+  "osc": {
+    "server": "192.168.1.110",
+    "port": 57121,
+    "sensors": {
+      "pressure": "/psysense/pressure",
+      "accelerationX": "/psysense/accelerationX",
+      "accelerationY": "/psysense/accelerationY",
+      "accelerationZ": "/psysense/accelerationZ"
+    }
+  }
+}
