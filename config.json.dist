@@ -10,7 +10,9 @@
       "pressure": "/psysense/pressure",
       "accelerationX": "/psysense/accelerationX",
       "accelerationY": "/psysense/accelerationY",
-      "accelerationZ": "/psysense/accelerationZ"
+      "accelerationZ": "/psysense/accelerationZ",
+      "lightBlue": "/psysense/lightBlue",
+
     }
   }
 }

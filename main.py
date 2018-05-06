@@ -43,18 +43,26 @@ while True:
     # Send 3-axis acceleration
     li = LIS2HH12(py)
     accelerationOscData = li.acceleration()
+
     osc.send(CONFIG["osc"]["sensors"]["accelerationX"], accelerationOscData[0])
     print("Acceleration: " + str(accelerationOscData[0]))
+
     osc.send(CONFIG["osc"]["sensors"]["accelerationY"], accelerationOscData[1])
     print("Acceleration: " + str(accelerationOscData[1]))
+
     osc.send(CONFIG["osc"]["sensors"]["accelerationZ"], accelerationOscData[2])
     print("Acceleration: " + str(accelerationOscData[2]))
 
+    # Send light values
+    lt = LTR329ALS01(py)
+    osc.send(CONFIG["osc"]["sensors"]["lightBlue"], str(lt.light()[0]))
+    print("Light (channel Blue lux, channel Red lux): " + str(lt.light()[0]))
+
     time.sleep_ms(100)
-    #print('free:', str(gc.mem_free()))
-    #print('info:', str(machine.info()))
-    #print('info:', str(gc.mem_alloc()))
-    #print('info:', str(micropython.mem_info()))
+    # print('free:', str(gc.mem_free()))
+    # print('info:', str(machine.info()))
+    # print('info:', str(gc.mem_alloc()))
+    # print('info:', str(micropython.mem_info()))
     gc.collect()
 
     #########################################
